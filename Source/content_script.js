@@ -1,47 +1,56 @@
 walk(document.body);
 
-function walk(node) 
+function walk(node)
 {
-	// I stole this function from here:
-	// http://is.gd/mwZp7E
-	
-	var child, next;
-	
-	if (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea'
-	    || node.classList.indexOf('ace_editor') > -1) {
-		return;
-	}
+  // I stole this function from here:
+ // http://is.gd/mwZp7E
 
-	switch ( node.nodeType )  
-	{
-		case 1:  // Element
-		case 9:  // Document
-		case 11: // Document fragment
-			child = node.firstChild;
-			while ( child ) 
-			{
-				next = child.nextSibling;
-				walk(child);
-				child = next;
-			}
-			break;
+  var child, next;
+//  console.log(tagName, 'tagName');
 
-		case 3: // Text node
-			handleText(node);
-			break;
-	}
+  if (!node || (node.tagName && (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea'))) {
+    return;
+  }
+
+  console.log(node, 'node');
+  switch ( node.nodeType )
+  {
+    case 1:  // Element
+    case 9:  // Document
+    case 11: // Document fragment
+      child = node.firstChild;
+      while ( child )
+      {
+        next = child.nextSibling;
+        walk(child);
+        child = next;
+      }
+      break;
+
+    case 3: // Text node
+      handleText(node);
+      break;
+  }
 }
 
-function handleText(textNode) 
+function handleText(textNode)
 {
-	var v = textNode.nodeValue;
+  var v = textNode.nodeValue;
 
-	v = v.replace(/\bThe Cloud\b/g, "My Butt");
-	v = v.replace(/\bThe cloud\b/g, "My butt");
-	v = v.replace(/\bthe Cloud\b/g, "my Butt");
-	v = v.replace(/\bthe cloud\b/g, "my butt");
-	
-	textNode.nodeValue = v;
+  v = v.replace(/\bhome run(s)?\b/g, "ding dong Johnson$1");
+  v = v.replace(/\bHome run(s)?\b/g, "Ding dong Johnson$1");
+  v = v.replace(/\bHome Run(s)?\b/g, "Ding Dong Johnson$1");
+
+  v = v.replace(/\bhomerun(s)?\b/g, "ding dong Johnson$1");
+  v = v.replace(/\bHomerun(s)?\b/g, "Ding Dong Johnson$1");
+
+  v = v.replace(/\bhomer(s)?\b/g, "ding dong Johnson$1");
+  v = v.replace(/\bHomer(s)?\b/g, "Ding dong Johnson$1");
+
+  v = v.replace(/\bHR(s|S)?\b/g, "DDJ$1");
+  v = v.replace(/\bhr(s|S)?\b/g, "ddj$1");
+
+  textNode.nodeValue = v;
 }
 
 
