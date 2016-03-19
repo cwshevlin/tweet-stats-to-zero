@@ -6,7 +6,7 @@ Replaces 'home run' with 'Ding Dong Johnson'.
 
 [Download from the web store](https://chrome.google.com/webstore/detail/ding-dong-johnson/bgeoilalcobkgmcanpbdgfckhkflblcm)
 
-Inspired by this [tweet](https://twitter.com/mcculloughtimes/status/385189088694771712)
+Inspired by this [tweet](https://twitter.com/mcculloughtimes/status/385189088694771712).
 
 Apparently Pedro Martinez on occasion calls home runs "ding dong Johnsons." This Chrome extension replaces any instance of "home run" with "ding dong Johnson," because that is a superior and more descriptive term. 
 
