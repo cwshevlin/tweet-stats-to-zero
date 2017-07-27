@@ -1,0 +1,31 @@
+.trump-tweet span.ProfileTweet-actionCountForPresentation {
+  display: none;
+}
+
+.trump-tweet span.ProfileTweet-actionCountForPresentation {
+  content: "0";
+}
+
+.trump-tweet span.ProfileTweet-actionCount {
+  display: none;
+}
+
+.trump-tweet span.ProfileTweet-actionCount:after {
+  content: "0";
+}
+
+.trump-tweet span.ProfileNav-value {
+  display: none;
+}
+
+.trump-tweet span.ProfileNav-value:after {
+  content: "0";
+}
+
+.trump-stat .ProfileNav-item--followers span.ProfileNav-value {
+  display: none;
+}
+
+.trump-stat .ProfileNav-item--followers span.ProfileNav-value:after {
+  content: "16";
+}

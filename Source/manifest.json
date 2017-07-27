@@ -1,17 +1,21 @@
 {
   "manifest_version": 2,
-  "name": "Ding Dong Johnson",
+  "name": "Tweet Stats to Zero",
   "icons": { "16": "baseball.png", "32": "baseball.png", "64":"pedro.png"},
   "version": "1.0",
-  "description": "Replaces the text 'home run' with 'ding dong Johnson'.",
+  "description": "Sets Trumps' tweet stats to zero",
   "browser_action": {
     "default_icon": "baseball.png"
+  },
+  "background": {
+    "scripts": ["third-party/jquery-3.2.1.slim.min.js"]
   },
   "content_scripts":
   [
     {
-      "matches": ["*://*/*"],
-      "js": ["content_script.js"],
+      "matches": ["*://twitter.com/*"],
+      "js": ["third-party/jquery-3.2.1.slim.min.js","script.js"],
+      "css": ["main.css"],
       "run_at": "document_end"
     }
   ]
